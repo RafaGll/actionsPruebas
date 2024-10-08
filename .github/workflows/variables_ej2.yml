@@ -7,4 +7,4 @@ jobs:
 
     steps:
       - name: Definir variables
-        run: echo "Contenido del secreto -> ${{ secret.MY_SECRET }}
+        run: echo "Contenido del secreto -> ${{ secrets.MY_SECRET }}
