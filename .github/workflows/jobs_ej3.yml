@@ -8,10 +8,11 @@ jobs:
       - name: Crear archivo
         run: touch archivo.txt
   mover:
+    needs: crear
     runs-on: ubuntu-latest
     steps:
       - name: listar
-        run: ll
+        run: ls -la
 
     
 
