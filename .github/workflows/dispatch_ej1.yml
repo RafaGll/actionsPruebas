@@ -1,0 +1,18 @@
+name: Ejercicio 1 dispatch
+
+on: workflow_dispatch
+
+jobs:
+  inputs:
+    input1:
+      description: 'Introduce algo:'
+      required: true
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo $input_input1
+
+    
+
