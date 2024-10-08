@@ -1,0 +1,15 @@
+name: Ejercicio 3 jobs
+on: workflow_dispatch
+
+jobs:
+  strategy:
+    matrix:
+      multipleOs: [ubuntu-24.04, macos-latest, ubuntu-latest]
+
+  build:
+    runs-on: ubuntu-latest
+    multipleOs:
+      - run: echo corriendo en ${{ runner.os }}
+
+    
+
