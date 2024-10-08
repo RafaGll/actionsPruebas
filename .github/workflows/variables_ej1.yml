@@ -7,8 +7,9 @@ jobs:
 
     steps:
       - name: Definir variables
+        id: def_vars
         run: |
           echo "nombre=rafa" >> $GITHUB_OUTPUT
           echo "apellido=gonzalez" >> $GITHUB_OUTPUT
       - name: Ejecutar comando
-        run: echo ${{ output.nombre }}
+        run: echo ${{ steps.def_vars.output.nombre }}
