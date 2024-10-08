@@ -3,7 +3,7 @@ on: push
 
 jobs:
   test:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Pruebass
         run: echo "hola"
