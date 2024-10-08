@@ -11,8 +11,8 @@ jobs:
     needs: crear
     runs-on: ubuntu-latest
     steps:
-      - name: listar
-        run: ls -la
+      - name: Mover
+        run: mv archivo.txt archivo2.txt
 
     
 
