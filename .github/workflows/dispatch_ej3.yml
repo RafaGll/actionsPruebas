@@ -12,9 +12,9 @@ jobs:
 
   printInputs:
     runs-on: ubuntu-latest
+    env:
+      seleccion: ${{ inputs.confirm }}
 
     steps:
-      env:
-        seleccion: ${{ inputs.confirm }}
       - run: echo $seleccion   
 
