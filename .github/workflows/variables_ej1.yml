@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Definir variables
         run: |
-          echo "nombre=rafa" >> "$GITHUB_OUTPUT"
-          echo "apellido=gonzalez" >> "$GITHUB_OUTPUT"
+          echo "nombre=rafa" >> $GITHUB_OUTPUT
+          echo "apellido=gonzalez" >> $GITHUB_OUTPUT
       - name: Ejecutar comando
-        run: echo "Mi nombre completo: $nombre"
+        run: echo $nombre
