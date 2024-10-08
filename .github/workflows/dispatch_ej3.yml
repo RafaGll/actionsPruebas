@@ -12,9 +12,10 @@ jobs:
 
   printInputs:
     runs-on: ubuntu-latest
-    env:
-      seleccion: ${{ inputs.confirm }}
-
     steps:
-      - run: echo $seleccion   
+      - run: |
+          if ${{ inputs.confirm }}; then
+            echo "Has confirmado"
+          else
+            echo "No has confirmado"
 
