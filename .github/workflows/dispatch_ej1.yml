@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo $input_input1
+      - name: print input
+        run: echo $input_input1
 
     
 
