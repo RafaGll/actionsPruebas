@@ -7,8 +7,14 @@ jobs:
     steps:
       - name: Mostrar fecha y hora
         run: date
+      - name: clonar repo
+        uses: actions/checkout@v4
       - name: Crear archivo de texto
         run: touch prueba.txt
       - name: Listar archivos
         run: ls
-        # - name: Hacer commit y push
+      - name: Hacer commit y push
+        run: |
+          git add .
+          git commit -m "prueba.txt generado"
+          git push
