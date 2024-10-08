@@ -18,4 +18,5 @@ jobs:
             echo "Has confirmado"
           else
             echo "No has confirmado"
+          fi
 
