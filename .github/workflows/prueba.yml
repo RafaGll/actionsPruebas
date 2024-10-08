@@ -2,5 +2,10 @@ name: prueba
 on: push
 
 jobs:
-  test: run-on: ubuntu-latest
+  test:
+    run-on: ubuntu-latest
+    steps:
+      - name: Pruebass
+        run: echo "hola"
+
 
