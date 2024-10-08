@@ -8,7 +8,7 @@ jobs:
       - name: Mostrar fecha y hora
         run: date
       - name: Crear archivo de texto
-        run: touch
+        run: touch prueba.txt
       - name: Listar archivos
         run: ls
         # - name: Hacer commit y push
