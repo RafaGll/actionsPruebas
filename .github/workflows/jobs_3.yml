@@ -3,8 +3,9 @@ on: workflow_dispatch
 
 jobs:
   test:
-    matrix:
-      multipleOs: [ubuntu-24.04, macos-latest, ubuntu-latest]
+    strategy:
+      matrix:
+        multipleOs: [ubuntu-24.04, macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.multipleOs }}
     steps:
       - run: echo corriendo en ${{ runner.os }}
