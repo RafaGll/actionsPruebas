@@ -1,0 +1,21 @@
+name: Ejercicio 1 dispatch
+
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Selecciona el entorno'
+        required: true
+        type: choice
+        options:
+          - production
+          - staging
+
+jobs:
+
+  printInputs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo ${{ inputs.environment }}    
+
