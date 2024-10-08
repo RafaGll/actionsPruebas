@@ -1,4 +1,4 @@
-name: Ejercicio 1 dispatch
+name: Ejercicio 2 dispatch
 
 on: 
   workflow_dispatch:
