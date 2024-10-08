@@ -1,0 +1,10 @@
+name: Ejercicio 2 Variables y Outputs
+on: workflow_dispatch
+
+jobs:
+  variables:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Definir variables
+        run: echo "Contenido del secreto -> ${{ secret.MY_SECRET }}
