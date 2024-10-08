@@ -7,7 +7,8 @@ jobs:
 
     steps:
       - name: Definir variables
-        env:
-          nombre: Rafa
-          apellido: Gonzalez
-      - run: echo ${{ env.nombre }}
+        run: |
+          echo "nombre=rafa" >> "$GITHUB_OUTPUT"
+          echo "apellido=gonzalez" >> "$GITHUB_OUTPUT"
+      - name: Ejecutar comando
+        run: echo "Mi nombre completo: ${{ nombre }}"
