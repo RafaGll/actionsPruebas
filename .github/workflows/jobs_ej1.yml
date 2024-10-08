@@ -1,0 +1,12 @@
+name: Ejercicio 1 jobs
+on: workflow_dispatch
+
+jobs:
+  job:
+    - name: Mostrar fecha y hora
+      run: date
+    - name: Crear archivo de texto
+      run: touch
+    - name: Listar archivos
+      run: ls
+    - name: Hacer commit y push
