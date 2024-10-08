@@ -6,5 +6,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Definir variables
+      - name: Imprimir secreto
         run: echo "Contenido del secreto -> ${{ secrets.MY_SECRET }}"
