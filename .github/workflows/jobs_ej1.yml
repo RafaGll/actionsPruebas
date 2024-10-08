@@ -3,6 +3,7 @@ on: workflow_dispatch
 
 jobs:
   job:
+    runs-on: ubuntu-latest
     steps:
       - name: Mostrar fecha y hora
         run: date
