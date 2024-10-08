@@ -14,5 +14,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo ${{ github.event.inputs.entrada }}    
+      - run: echo ${{ inputs.entrada }}    
 
