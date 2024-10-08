@@ -1,9 +1,9 @@
 name: Ejercicio 2 jobs
 on: 
   workflow_dispatch:
-    input:
+    inputs:
       fallar: 
-        Description: 'Selecciona si quieres que falle'  
+        description: 'Selecciona si quieres que falle'  
         type: boolean
         required: true
 
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fallar o seguir
-        if: ${{ input.fallar }}
+        if: ${{ inputs.fallar }}
         run: exit 1
   deploy:
     needs: build
