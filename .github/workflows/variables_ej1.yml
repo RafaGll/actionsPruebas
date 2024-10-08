@@ -12,4 +12,4 @@ jobs:
           echo "nombre=rafa" >> $GITHUB_OUTPUT
           echo "apellido=gonzalez" >> $GITHUB_ENV
       - name: Ejecutar comando
-        run: echo Mi nombre completo: ${{ steps.def_vars.outputs.nombre }} $apellido
+        run: echo "Mi nombre completo: ${{ steps.def_vars.outputs.nombre }} ${{ env.apellido }}"
