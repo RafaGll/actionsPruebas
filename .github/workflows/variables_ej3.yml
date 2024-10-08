@@ -6,6 +6,10 @@ jobs:
     steps:
       - name: Generar número aleatorio entre 1 y 100
         run: echo "num=$((1 + $RANDOM % 100))" >> $GITHUB_ENV
+      - name: ver número
+        run: echo ${{ env.num }}
+      - name: ver igualdad
+        run: echo ${{ env.num > 50 }}
       - name: Imprimir si el número es mayor de 50
         if: ${{ env.num > 50 }}
         run: echo "El número ${{ env.num }} es mayor de 50"
