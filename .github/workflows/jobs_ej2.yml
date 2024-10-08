@@ -9,14 +9,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    - name: Fallar o seguir
-      if: ${{ input.fallar }}
-      run: exit 1
+    steps:
+      - name: Fallar o seguir
+        if: ${{ input.fallar }}
+        run: exit 1
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    - name: Imprimir mensaje
-      run: echo "Exito"
+    steps:
+      - name: Imprimir mensaje
+        run: echo "Exito"
 
     
 
