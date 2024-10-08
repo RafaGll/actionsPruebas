@@ -11,4 +11,4 @@ jobs:
           echo "nombre=rafa" >> $GITHUB_OUTPUT
           echo "apellido=gonzalez" >> $GITHUB_OUTPUT
       - name: Ejecutar comando
-        run: echo $nombre
+        run: echo ${{ nombre }}
