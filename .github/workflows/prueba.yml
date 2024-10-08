@@ -5,8 +5,5 @@ jobs:
   job:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          git config --global user.name "RafaGll"
-          git config --global user.email "rafaelgonzalezllamas2001@gmail.com"
       - uses: actions/checkout@v4
       - run: ls -la
