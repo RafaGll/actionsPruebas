@@ -2,13 +2,11 @@ name: Ejercicio 3 jobs
 on: workflow_dispatch
 
 jobs:
-  strategy:
+  test:
     matrix:
       multipleOs: [ubuntu-24.04, macos-latest, ubuntu-latest]
-
-  build:
-    runs-on: ubuntu-latest
-    multipleOs:
+    runs-on: ${{ matrix.multipleOs }}
+    steps:
       - run: echo corriendo en ${{ runner.os }}
 
     
