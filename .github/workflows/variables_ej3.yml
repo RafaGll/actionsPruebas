@@ -1,0 +1,11 @@
+name: Ejercicio 3 Variables y Outputs
+on: workflow_dispatch
+jobs:
+  variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generar número aleatorio entre 1 y 100
+        run: echo "num=$((1 + $RANDOM % 100))" >> $GITHUB_ENV
+      - name: Imprimir si el número es mayor de 50
+        if: ${{ env.num }} > 50
+        run: echo "El número ${{ env.num }} es mayor de 50"
