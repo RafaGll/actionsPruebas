@@ -1,0 +1,22 @@
+name: Ejercicio 2 jobs
+on: 
+  workflow_dispatch:
+    input:
+      fallar: 
+        Description: 'Selecciona si quieres que falle'  
+        type: boolean
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    - name: Fallar o seguir
+      if: ${{ input.fallar }}
+      run: exit 1
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    - name: Imprimir mensaje
+      run: echo "Exito"
+
+    
+
