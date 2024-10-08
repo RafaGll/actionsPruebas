@@ -22,3 +22,5 @@ jobs:
           git add prueba.txt
           git commit -m "prueba.txt generado"
           git push
+        env:
+          GITHUB_TOKEN: ${secrets.TOKEN_ACTIONS}
