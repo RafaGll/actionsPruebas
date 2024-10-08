@@ -1,0 +1,13 @@
+name: Ejercicio 1 Variables y Outputs
+on: workflow_dispatch
+
+jobs:
+  variables:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Definir variables
+        env:
+          nombre: Rafa
+          apellido: Gonzalez
+      - run: echo ${{ env.nombre }}
