@@ -3,4 +3,8 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.ref }}
+      - name: seguir
+        if: ${{ github.ref != 'feature/*' }}
+        run: exit 1
+
+
