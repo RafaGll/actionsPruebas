@@ -21,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: development
     steps:
+      - run: echo ${{ vars.API_URL }}
       - name: devolver API_URL
         run: |
           echo "api=${{ env.log }}" >> $GITHUB_OUTPUT
