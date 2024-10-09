@@ -15,9 +15,10 @@ jobs:
           echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
           cat ./archivo.json >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
+          echo "version=${{ fromJson(env.PACKAGE_JSON).applications.version }}" >> $GITHUB_ENV
       - name: a ver
-        run: echo ${{ fromJson(env.PACKAGE_JSON).applications.version }}
+        run: echo ${{ env.version }}
 
       - name: print 
-        if: ${{ github.ref_name == 'develop' }}
-        run: echo ${{ github.ref_name }}
+        if: ${{ github.ref_name == 'main' }}
+        run: echo "Desplegando en producción la versión"
