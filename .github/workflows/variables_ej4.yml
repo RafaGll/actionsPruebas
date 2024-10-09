@@ -6,15 +6,10 @@ jobs:
     steps:
       - name: clonar repo
         uses: actions/checkout@v4
-      - name: ver dentro
-        run: ls -la
-      - name: Read json
+      - name: Leer json
         run: |
-          if [ ! -f archivo.json ]; then
-            echo "archivo.json no existe"
-            exit 1
-          fi
-      - name: guardar
-        run: echo "$(cat archivo.json)=file" >> $GITHUB_ENV
+          echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
+          cat ./archivo.json >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
       - name: a ver
-        run: echo ${{ env.file }}
+        run: echo ${{ fromJson(env.PACKAGE_JSON) }}
