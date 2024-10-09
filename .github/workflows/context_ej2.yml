@@ -1,0 +1,12 @@
+name: Ejercicio 2 de Contexts
+on: push
+
+jobs:
+  despliegue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Despliegue en main
+        if: ${{ github.ref_name == 'main' }}
+        run: echo desplegando con ${{ env.key }}
+        env: key: ${{ secrets.PROD_API_KEY }}
+
