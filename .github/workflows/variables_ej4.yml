@@ -4,6 +4,8 @@ jobs:
   json_read:
     runs-on: ubuntu-latest
     steps:
+      - name: clonar repo
+        uses: actions/checkout@v4
       - name: Read json
         run: |
           if [ ! -f archijo.json ]; then
