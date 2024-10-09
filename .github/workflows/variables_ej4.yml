@@ -14,6 +14,7 @@ jobs:
             echo "archivo.json no existe"
             exit 1
           fi
-          echo "$(cat archivo.json)=file" >> $GITHUB_ENV
+      - name: guardar
+        run: echo "$(cat archivo.json)=file" >> $GITHUB_ENV
       - name: a ver
         run: echo ${{ env.file }}
