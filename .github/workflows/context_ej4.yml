@@ -1,0 +1,12 @@
+name: Ejercicio 4 de Contexts
+on:
+  pull_request:
+    types: opened
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name:
+        run: echo ${{ toJSON(github.event) }}
+
+
