@@ -10,7 +10,7 @@ jobs:
         run: ls -la
       - name: Read json
         run: |
-          if [ ! -f archijo.json ]; then
+          if [ ! -f archivo.json ]; then
             echo "archivo.json no existe"
             exit 1
           fi
