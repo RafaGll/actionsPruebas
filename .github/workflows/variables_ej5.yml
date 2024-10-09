@@ -4,9 +4,10 @@ on: push
 jobs:
   variables1:
     runs-on: ubuntu-latest
-    env:
-      var1: 1
     steps:
+      - env: 
+        var1: 1
+        run: echo ${{ env.var1 }}
       - name: Crear variables
         run: echo "var2=2" >> $GITHUB_ENV
       - name: Imprimir
