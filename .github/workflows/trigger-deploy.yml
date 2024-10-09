@@ -1,0 +1,12 @@
+on: workflow_dispatch
+
+jobs:
+  llamar:
+    uses: rafagll/actionsPruebas/.github/workflows/deploy-environment.yml@main
+  imprimir:
+    needs: llamar
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ needs.llamar.outputs.LOG_LEVEL }}
+
+

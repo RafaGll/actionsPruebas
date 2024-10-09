@@ -1,0 +1,9 @@
+name: Llamar a otro workflow
+on: workflow_dispatch
+
+jobs:
+  llamar:
+    uses: .github/workflows/reusar_1.yml
+
+    
+
