@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name:
-        run: echo "${{ toJson(github.event.pull_request.title) }}" 
+        run: |
+          if [ ${{ github.event.pull_request.title == *"urgent"*}} ]; then
+            echo "${{ github.event.pull_request.title }}"
+          fi
 
 
