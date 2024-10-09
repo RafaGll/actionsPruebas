@@ -32,7 +32,7 @@ jobs:
       - name: Imprimir var2
         run: echo ${{ env.var2 }}
       - name: Imprimir var_step_output
-        run: echo ${{ needs.variables2.outputs.var_step_ouptut }}
+        run: echo "${{ needs.variables2.outputs.var_step_ouptut }}"
 
 
 
