@@ -1,0 +1,8 @@
+on: push
+
+jobs:
+  trabajo:
+    environment: development
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ vars.LOG_LEVEL }}
