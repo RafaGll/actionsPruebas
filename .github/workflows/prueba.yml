@@ -1,10 +1,10 @@
-on: push
+on: workflow_call
 jobs:
   print:
     runs-on: ubuntu-latest
     steps:
       - name: seguir
-        if: ${{ !startsWith(github.ref, 'refs/') }}
+        if: ${{ !startsWith(github.ref, 'feature/') }}
         run: exit 1
 
 
