@@ -12,7 +12,7 @@ jobs:
           key: ${{ secrets.PROD_API_KEY }}
 
       - name: Despliegue normal
-        if: ${{ ! github.ref_name == 'main' }}
+        if: ${{ github.ref_name != 'main' }}
         run: echo desplegando con STAGING_API_KEY ${{ env.key }}
         env: 
           key: ${{ secrets.STAGING_API_KEY }}
