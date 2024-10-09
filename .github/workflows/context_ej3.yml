@@ -1,0 +1,13 @@
+name: Ejercicio 3 de Contexts
+on: push
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tarea ficticia
+        run: echo "Realizando una tarea"
+      - name: Enviar mensaje de notificación
+        run: |
+          echo "Estado del job: ${{ job.status }}"
+          echo "Nombre del evento: ${{ github.event_name }}"
