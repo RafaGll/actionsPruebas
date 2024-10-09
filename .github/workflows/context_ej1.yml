@@ -1,0 +1,11 @@
+name: Ejercicio 1 de Contexts
+on: push
+
+jobs:
+  info_runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprimir info del runner
+        run: |
+          echo: "Sistema operativo ${{ runner.os }}"
+
