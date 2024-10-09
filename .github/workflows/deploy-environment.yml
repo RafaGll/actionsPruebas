@@ -23,13 +23,5 @@ jobs:
     steps:
       - name: devolver API_URL
         run: |
-          echo "api=${{ env.log }}" >> $GITHUB_OUTPUT
-          echo "log=${{ env.api }}" >> $GITHUB_OUTPUT
-        env:
-          api: ${{ vars.API_URL }}
-          log: ${{ vars.LOG_LEVEL }}
-      - name: save
-        run: echo "${{ vars.API_URL }}" > file.txt
-
-      - name: cat
-        run: cat file.txt
+          echo "api=${{ vars.API_URL }}" >> $GITHUB_OUTPUT
+          echo "log=${{ vars.LOG_LEVEL }}" >> $GITHUB_OUTPUT
