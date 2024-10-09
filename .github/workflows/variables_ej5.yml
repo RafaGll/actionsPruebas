@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Crear variables
-        run: echo var2=2 >> $GITHUB_ENV
+        run: echo "var2=2" >> $GITHUB_ENV
       - name: imprimir
         run: echo ${{ env.var2 }}
 
