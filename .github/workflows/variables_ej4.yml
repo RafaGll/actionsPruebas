@@ -1,5 +1,9 @@
 name: Ejercicio 4 Variables y Outputs
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      - main
+      - develop
 jobs:
   json_read:
     runs-on: ubuntu-latest
@@ -13,3 +17,6 @@ jobs:
           echo 'EOF' >> $GITHUB_ENV
       - name: a ver
         run: echo ${{ fromJson(env.PACKAGE_JSON).applications.version }}
+
+      - name: print 
+        run: echo ${{ github.ref_name }}
