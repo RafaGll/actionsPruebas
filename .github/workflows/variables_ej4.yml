@@ -12,4 +12,4 @@ jobs:
           cat ./archivo.json >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
       - name: a ver
-        run: echo ${{ fromJson(env.PACKAGE_JSON) }}
+        run: echo ${{ fromJson(env.PACKAGE_JSON).applications }}
