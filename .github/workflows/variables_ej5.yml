@@ -20,7 +20,7 @@ jobs:
         id: step1
         run: echo "var_step_output=valor" >> $GITHUB_OUTPUT
       - name: Imprimir output
-        run: echo ${{ steps.step1.outputs.var_step }}
+        run: echo ${{ steps.step1.outputs.var_step_output }}
 
 
 
