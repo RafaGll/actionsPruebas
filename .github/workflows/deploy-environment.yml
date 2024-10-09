@@ -5,7 +5,7 @@ on:
     inputs:
       environment:
         description: Elegir entorno
-        required: true
+        required: false
         default: development
         type: string
     outputs:
