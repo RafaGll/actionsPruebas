@@ -19,4 +19,5 @@ jobs:
         run: echo ${{ fromJson(env.PACKAGE_JSON).applications.version }}
 
       - name: print 
+        if: ${{ github.ref_name == 'main' }}
         run: echo ${{ github.ref_name }}
