@@ -19,9 +19,9 @@ on:
 jobs:
   devolver:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: development
     steps:
       - name: devolver API_URL
         run: |
-        echo "api=${{ vars.API_URL }}" >> $GITHUB_OUTPUT
-        echo "log=${{ vars.LOG_LEVEL }}" >> $GITHUB_OUTPUT
+          echo "api=${{ vars.API_URL }}" >> $GITHUB_OUTPUT
+          echo "log=${{ vars.LOG_LEVEL }}" >> $GITHUB_OUTPUT
