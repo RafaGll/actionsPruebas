@@ -15,6 +15,6 @@ jobs:
             exit 1
           fi
       - name: guardar
-        run: echo "$(cat archivo.json)=file" >> $GITHUB_ENV
+        run: echo "file=$(cat archivo.json)" >> $GITHUB_ENV
       - name: a ver
         run: echo ${{ env.file }}
