@@ -8,8 +8,9 @@ jobs:
     steps:
       - name:
         run: |
-          if [ ${{ github.event.pull_request.title == "*urgent*"}} ]; then
+          if [[ "${{ github.event.pull_request.title }}" == *"urgent"* ]]; then
             echo "${{ github.event.pull_request.title }}"
+            echo "${{ github.event.pull_request.body }}"
           fi
 
 
