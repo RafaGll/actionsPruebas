@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: seguir
-        if: ${{ !startsWith(github.ref, 'refs/' }}
+        if: ${{ !startsWith(github.ref, 'refs/') }}
         run: exit 1
 
 
