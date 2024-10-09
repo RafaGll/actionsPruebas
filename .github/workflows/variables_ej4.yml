@@ -16,7 +16,7 @@ jobs:
           cat ./archivo.json >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
       - name: Guardar versión
-        run: echo "version=${{ fromJson(env.PACKAGE_JSON).applications.verssion }}" >> $GITHUB_ENV
+        run: echo "version=${{ fromJson(env.PACKAGE_JSON).applications.version }}" >> $GITHUB_ENV
 
       - name: main 
         if: ${{ github.ref_name == 'main' }}
