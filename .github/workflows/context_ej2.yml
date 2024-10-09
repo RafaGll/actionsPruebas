@@ -8,5 +8,6 @@ jobs:
       - name: Despliegue en main
         if: ${{ github.ref_name == 'main' }}
         run: echo desplegando con ${{ env.key }}
-        env: key: ${{ secrets.PROD_API_KEY }}
+        env: 
+          key: ${{ secrets.PROD_API_KEY }}
 
