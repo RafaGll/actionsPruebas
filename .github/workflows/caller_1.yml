@@ -3,7 +3,7 @@ on: workflow_dispatch
 
 jobs:
   llamar:
-    uses: .github/workflows/reusar_1.yml
+    uses: ./.github/workflows/reusar_1.yml
 
     
 
