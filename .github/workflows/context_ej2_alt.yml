@@ -7,9 +7,9 @@ jobs:
     steps:
       - name: Despliegue en main
         run: |
-          if [ ${{ github.ref_name}} == 'otrao' ]; then
-            echo "hola"
+          if [ ${{ github.ref_name}} == 'main' ]; then
+            echo "Desplegando con PROD_API_KEY = ${{ secrets.PROD_API_KEY }}"
           else
-            echo "adios"
+            echo "Desplegando con STAGING_API_KEY = ${{ secrets.STAGING_API_KEY }}"
           fi
 
