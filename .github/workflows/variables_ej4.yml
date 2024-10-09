@@ -1,0 +1,15 @@
+name: Ejercicio 4 Variables y Outputs
+on: workflow_dispatch
+jobs:
+  json_read:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read json
+        run: |
+          if [ ! -f archijo.json ]; then
+            echo "archivo.json no existe"
+            exit 1
+          fi
+          echo "$(cat archivo.json)=file" >> $GITHUB_ENV
+      - name: a ver
+        run: echo ${{ env.file }}
