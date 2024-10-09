@@ -22,4 +22,4 @@ jobs:
 
       - name: print 
         if: ${{ github.ref_name == 'main' }}
-        run: echo "Desplegando en producción la versión ${{ env.P
+        run: echo "Desplegando en producción la versión"
