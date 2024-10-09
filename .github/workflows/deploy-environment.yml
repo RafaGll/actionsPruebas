@@ -21,7 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: development
     steps:
-      - run: echo ${{ vars.API_URL }}
       - name: devolver API_URL
         run: |
           echo "api=${{ env.log }}" >> $GITHUB_OUTPUT
@@ -29,3 +28,8 @@ jobs:
         env:
           api: ${{ vars.API_URL }}
           log: ${{ vars.LOG_LEVEL }}
+      - name: save
+        run: echo "${{ vars.API_URL }}" > file.txt
+
+      - name: cat
+        run: cat file.txt
