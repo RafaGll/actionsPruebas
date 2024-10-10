@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: ls -la
       - uses: ./.github/actions/actions1
+      - name: comprobar archivo
+        run: cat archivo.txt
 
