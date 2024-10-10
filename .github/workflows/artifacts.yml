@@ -5,7 +5,7 @@ jobs:
   subida:
     runs-on: ubuntu-latest
     steps:
-      - using: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: subir archivo
         uses: actions/upload-artifact@v4
         with:
