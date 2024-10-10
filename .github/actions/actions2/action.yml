@@ -3,5 +3,5 @@ name: 'Mostrar info'
 runs:
   using: "composite"
   steps:
-    - run: echo ${{ github.ref }}
+    - run: echo ${{ github.actor }}
       shell: bash
