@@ -1,0 +1,11 @@
+name: 'Crear archivo'
+description: 'Se creará un archivo de texto en el directorio raíz del repositorio con un mensaje'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Crear archivo con mensaje
+      run: echo $mensaje > archivo1.txt
+      shell: bash
+      env:
+        mensaje: 'Mensaje desde la acción'

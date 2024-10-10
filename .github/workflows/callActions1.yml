@@ -1,0 +1,9 @@
+name: Llamar a acción
+on: push
+
+jobs:
+  llamar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/action1.yml
+
