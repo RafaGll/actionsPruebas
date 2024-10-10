@@ -1,0 +1,7 @@
+name: 'Mostrar info'
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo ${{ github.ref }}
+      shell: bash
