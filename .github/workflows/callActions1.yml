@@ -8,5 +8,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/actions1
       - name: comprobar archivo
-        run: cat archivo.txt
+        run: cat archivo1.txt
 
