@@ -95,7 +95,7 @@ jobs:
         #   tf_actions_working_dir: "/soluciones"
 
       - name: Publicar el plan como un comentario del Pull Request
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.event.pull_request.merged == false
         run: echo COMENTARIO
         # uses: actions/terraform-comment@v1
         # with:
