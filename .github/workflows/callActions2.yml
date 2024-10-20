@@ -1,9 +1,0 @@
-name: Llamar a la acción2
-on: push
-
-jobs:
-  llamar:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/actions2

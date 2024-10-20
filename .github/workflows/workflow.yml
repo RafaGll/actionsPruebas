@@ -1,0 +1,109 @@
+name: Terraform CI/CD
+
+on:
+  pull_request:
+    types: [closed, opened]
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      terraform_action:
+        description: 'Selecciona la acción que quieres realizar (plan, apply, destroy)'
+        required: true
+        default: 'plan'
+        type: choice
+        options:
+          - plan
+          - apply
+          - destroy
+
+jobs:
+  terraform:
+    name: 'Terraform Workflow'
+    env:
+      # ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      # ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      # ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      # ARM_TENANT_ID: ${{ secrets.AZURE_ARM_TENANT_ID }}
+      TF_VERSION: 1.9.8
+    
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Verificar si el PR se cerró sin merge
+        if: github.event.pull_request.state == 'closed' && github.event.pull_request.merged == false
+        run: |
+          echo "El PR se cerró sin merge. Deteniendo el proceso."
+          exit 1
+          
+      - name: Hacer checkout del código
+        uses: actions/checkout@v4
+
+      - name: 'Terraform Format'
+        run: echo FORMAT
+        # uses: hashicorp/terraform-github-actions@master
+        # with:
+        #   tf_actions_version: ${{ env.TF_VERSION }}
+        #   tf_actions_subcommand: 'fmt'
+        #   tf_actions_working_dir: "/soluciones"
+          
+      - name: 'Terraform Init'
+        run: echo INIT
+        # uses: hashicorp/terraform-github-actions@master
+        # with:
+        #   tf_actions_version: ${{ env.TF_VERSION }}
+        #   tf_actions_subcommand: 'init'
+        #   tf_actions_working_dir: "/soluciones"
+
+      - name: 'Terraform Validate'
+        run: echo VALIDATE
+        # uses: hashicorp/terraform-github-actions@master
+        # with:
+        #   tf_actions_version: ${{ env.TF_VERSION }}
+        #   tf_actions_subcommand: 'validate'
+        #   tf_actions_working_dir: "/soluciones"
+
+      - name: 'Terraform Plan'
+        if: github.event_name == 'pull_request' || github.event.inputs.terraform_action == 'plan'
+        run: echo PLAN
+        # uses: hashicorp/terraform-github-actions@master
+        # with:
+        #   tf_actions_version: ${{ env.TF_VERSION }}
+        #   tf_actions_subcommand: 'plan'
+        #   tf_actions_working_dir: "/soluciones"
+
+      - name: 'Terraform Apply'
+        if: github.event.pull_request.merged == true || github.event.inputs.terraform_action  == 'apply'
+        id: apply
+        run: echo APPLY
+        # uses: hashicorp/terraform-github-actions@master
+        # with:
+        #   tf_actions_version: ${{ env.TF_VERSION }}
+        #   tf_actions_subcommand: 'apply'
+        #   tf_actions_working_dir: "/soluciones"
+
+      - name: Terraform Destroy
+        if: github.event.inputs.terraform_action == 'destroy'
+        run: echo DESTROY
+        # uses: hashicorp/terraform-github-actions@master
+        # with:
+        #   tf_actions_version: ${{ env.TF_VERSION}}
+        #   tf_actions_subcommand: 'destroy'
+        #   tf_actions_working_dir: "/soluciones"
+
+      - name: Publicar el plan como un comentario del Pull Request
+        if: github.event_name == 'pull_request' && github.event.inputs.terraform_action == 'plan'
+        run: echo COMENTARIO
+        # uses: actions/terraform-comment@v1
+        # with:
+        #   terraform_plan_exitcode: ${{ steps.plan.outcome }}
+        #   github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Paso añadido para no gastar dinero
+      # Se añade para eliminar todo y no tener las máquinas virtuales activas
+      - name: Destruir todo 
+        if: steps.apply.outcome != 'skipped'
+        run: echo DESTROY

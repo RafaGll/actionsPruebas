@@ -1,5 +1,0 @@
-name: Seguir si es feature
-on: workflow_dispatch
-jobs:
-  llamada:
-    uses: ./.github/workflows/prueba.yml

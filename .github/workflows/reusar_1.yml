@@ -1,9 +1,0 @@
-name: Imprimir
-on: workflow_call
-
-jobs:
-  print:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Imprimir cadena
-        run: echo "Este texto se está imprimiendo en reusar_1.yml"
